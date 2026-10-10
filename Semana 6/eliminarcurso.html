@@ -63,15 +63,15 @@
       </header>
       <main>
         <div class="container">
-          <h1>Editar Curso</h1>
+          <h1>Eliminar Curso</h1>
           <!-- Button trigger modal -->
           <button
             type="button"
-            class="btn btn-primary btn-lg"
+            class="btn btn-danger btn-lg"
             data-bs-toggle="modal"
             data-bs-target="#modalId"
           >
-            Cargar Editar Curso
+            Cargar Eliminar Curso
           </button>
 
           <!-- Modal -->
@@ -87,7 +87,7 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h5 class="modal-title" id="modalTitleId">
-                    Modal Editar Curso
+                    Modal Eliminar Curso
                   </h5>
                   <button
                     type="button"
@@ -99,7 +99,7 @@
                 <div class="modal-body">
                   <div class="container-fluid">
                     <form
-                      action="https://paginas-web-cr.com/Api/form/actualizarcurso.php"
+                      action="https://paginas-web-cr.com/Api/form/eliminarcurso.php"
                       method="post"
                     >
                       <div class="mb-3">
@@ -110,58 +110,11 @@
                           name="id"
                           id="id"
                           aria-describedby="helpId"
-                          placeholder="Ingrese el nombre del curso"
+                          placeholder="Ingrese el id del curso"
                           required
                         />
                       </div>
-                      <div class="mb-3">
-                        <label for="" class="form-label">Nombre</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="nombre"
-                          id="nombre"
-                          aria-describedby="helpId"
-                          placeholder="Ingrese el nombre del curso"
-                          required
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label for="" class="form-label">Descripcion</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="descripcion"
-                          id="descripcion"
-                          aria-describedby="helpId"
-                          placeholder=""
-                          required
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label for="" class="form-label">Tiempo</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="tiempo"
-                          id="tiempo"
-                          aria-describedby="helpId"
-                          placeholder=""
-                          required
-                        />
-                      </div>
-                      <div class="mb-3">
-                        <label for="" class="form-label">Usuario</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          name="usuario"
-                          id="usuario"
-                          aria-describedby="helpId"
-                          placeholder=""
-                          required
-                        />
-                      </div>
+
                       <div class="mb-3">
                         <label for="" class="form-label">return_url</label>
                         <input
@@ -172,21 +125,18 @@
                           aria-describedby="helpId"
                           placeholder=""
                           required
-                          value="http://127.0.0.1:20021/Semana%206/editarcurso.html"
+                          value="http://127.0.0.1:20021/Semana%206/eliminarcurso.html"
                         />
                       </div>
+
                       <div class="mb-3">
-                        <button type="submit" class="btn btn-success">
+                        <button type="submit" class="btn btn-danger">
                           Enviar
-                        </button>
-                        <button type="reset" class="btn btn-danger">
-                          Reset
                         </button>
                       </div>
                       <p>
-                        Actualizar Curso Método: POST id nombre descripcion
-                        tiempo usuario return_url
-                        https://paginas-web-cr.com/Api/form/actualizarcurso.php
+                        Eliminar Curso Método: POST id
+                        https://paginas-web-cr.com/Api/form/eliminarcurso.php
                       </p>
                     </form>
                   </div>
