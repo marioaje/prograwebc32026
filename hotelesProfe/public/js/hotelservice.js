@@ -25,7 +25,13 @@ window.mostrarEditar = function (identificador) {
     const modalEditar = new bootstrap.Modal($("#modalEditar")[0]);
     modalEditar.show();
     // alert(identificador);
+    cargardatosFormularioEditar(identificador);
 }
+
+function cargardatosFormularioEditar(identificador) {
+
+}
+
 
 function pintarTabla(datos) {
 
@@ -66,35 +72,6 @@ function pintarTabla(datos) {
                 </tr>
         `
     });
-
-
-    //  correo
-    // : 
-    // "villasparaiso@gmail.com"
-    // descripcion
-    // : 
-    // "Hotel 5 Estrellas"
-    // estado
-    // : 
-    // "Activo"
-    // fecha_creacion
-    // : 
-    // "2026-10-25 21:43:15"
-    // id
-    // : 
-    // 368
-    // nombre
-    // : 
-    // "Hotel Villas Paraíso"
-    // sitio_web
-    // : 
-    // "https://hotelvillasparaiso.com"
-    // telefono
-    // : 
-    // "2229-2929"
-    // usuario
-    // : 
-    // "jose" 
 
 }
 
