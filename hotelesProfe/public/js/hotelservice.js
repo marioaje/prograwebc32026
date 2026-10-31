@@ -1,8 +1,15 @@
 import { API } from "./config.js";
 
 //Get  https://paginas-web-cr.com/Api/hotelApi/hotel/hotel.php 
+//JQuery, metodo que espera que cargue todo el html
+$(document).ready(function () {
+    consultarHoteles();
 
-
+    $("#formularioEditar").submit(function (eventos) {
+        eventos.preventDefault();
+        alert("guarde");
+    });
+});
 
 
 export async function consultarHoteles() {
@@ -53,7 +60,7 @@ function cargarInputsEditar(datos) {
     document.getElementById("descripcion").value = datos.descripcion;
     //  document.getElementById("estado").value = datos.estado;
     //  document.getElementById("fecha_creacion").value = datos.fecha_creacion;
-    // document.getElementById("id").value = datos.id ;
+    document.getElementById("id").value = datos.id;
     document.getElementById("nombre").value = datos.nombre;
     document.getElementById("sitio_web").value = datos.sitio_web;
     document.getElementById("telefono").value = datos.telefono;
@@ -105,7 +112,7 @@ function pintarTabla(datos) {
 
 
 
-consultarHoteles();
+
 
 
 
