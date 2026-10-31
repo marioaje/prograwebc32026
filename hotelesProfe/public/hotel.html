@@ -13,6 +13,7 @@
       integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
       crossorigin="anonymous"
     />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   </head>
 
   <body>
@@ -33,37 +34,10 @@
                 <th scope="col">Sitio Web</th>
                 <th scope="col">usuario</th>
                 <th scope="col">Fecha Creacion</th>
+                <th scope="col">Acciones</th>
               </tr>
             </thead>
-            <tbody id="tablaHotels">
-              <!-- correo
-: 
-"villasparaiso@gmail.com"
-descripcion
-: 
-"Hotel 5 Estrellas"
-estado
-: 
-"Activo"
-fecha_creacion
-: 
-"2026-10-25 21:43:15"
-id
-: 
-368
-nombre
-: 
-"Hotel Villas Paraíso"
-sitio_web
-: 
-"https://hotelvillasparaiso.com"
-telefono
-: 
-"2229-2929"
-usuario
-: 
-"jose" -->
-            </tbody>
+            <tbody id="tablaHotels"></tbody>
           </table>
         </div>
 
@@ -169,6 +143,56 @@ usuario
             </div>
           </div>
         </form> -->
+
+        <!-- Modal Editar-->
+        <div
+          class="modal fade"
+          id="modalEditar"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="modalTitleId"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modalTitleId">Modal title</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="container-fluid">Add rows here</div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button type="button" class="btn btn-primary">Save</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <script>
+          var modalId = document.getElementById("modalId");
+
+          modalId.addEventListener("show.bs.modal", function (event) {
+            // Button that triggered the modal
+            let button = event.relatedTarget;
+            // Extract info from data-bs-* attributes
+            let recipient = button.getAttribute("data-bs-whatever");
+
+            // Use above variables to manipulate the DOM
+          });
+        </script> -->
       </main>
       <footer>
         <!-- place footer here -->

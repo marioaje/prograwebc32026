@@ -2,6 +2,9 @@ import { API } from "./config.js";
 
 //Get  https://paginas-web-cr.com/Api/hotelApi/hotel/hotel.php 
 
+
+
+
 export async function consultarHoteles() {
     //Fecth sirve para invocar o enviar datos por APIS
     const respuesta = await fetch(API.HOTEL);
@@ -17,6 +20,12 @@ export async function consultarHoteles() {
     pintarTabla(dats.data);
 }
 
+window.mostrarEditar = function (identificador) {
+
+    const modalEditar = new bootstrap.Modal($("#modalEditar")[0]);
+    modalEditar.show();
+    // alert(identificador);
+}
 
 function pintarTabla(datos) {
 
@@ -36,7 +45,24 @@ function pintarTabla(datos) {
                     <td>${elementIndividuales.telefono}</td>
                     <td>${elementIndividuales.sitio_web}</td>
                     <td>${elementIndividuales.usuario}</td>
-                    <td>${elementIndividuales.fecha_creacion}</td>                    
+                    <td>${elementIndividuales.fecha_creacion}</td>     
+                    <td>
+                            <a
+                            name=""
+                            id=""
+                            class="btn btn-success"
+                            href="#"
+                            role="button"
+                            onclick="mostrarEditar('${elementIndividuales.id}')"
+                            >Editar</a> || 
+                                                        <a
+                            name=""
+                            id=""
+                            class="btn btn-danger"
+                            href="#"
+                            role="button"
+                            >Eliminar</a> 
+                   </td>                    
                 </tr>
         `
     });
@@ -75,3 +101,7 @@ function pintarTabla(datos) {
 
 
 consultarHoteles();
+
+
+
+//modalEditar
