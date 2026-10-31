@@ -9,6 +9,21 @@ $(document).ready(function () {
         eventos.preventDefault();
         actualizarDatos();
     });
+
+
+    $("#formularioCrear").submit(function (eventos) {
+        eventos.preventDefault();
+        crearDatos();
+    });
+
+
+    $("#formularioEliminar").submit(function (eventos) {
+        eventos.preventDefault();
+        eliminarDatos();
+    });
+
+
+
 });
 
 export async function actualizarDatos() {
@@ -58,6 +73,92 @@ export async function actualizarDatos() {
 }
 
 
+
+export async function eliminarDatos() {
+
+
+    const id = document.getElementById("ideliminar").value;
+
+
+    const hotel = {
+
+        "id": id
+
+    };
+
+    console.log(hotel);
+
+    const respuesta = await fetch(API.HOTEL,
+        {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(hotel)
+        }
+    );
+
+    if (!respuesta.ok) {
+        throw new Error("Error el servdidor de hotel." + respuesta.status);
+    }
+    const dats = await respuesta.json();
+
+    console.log("Json de la respuesta", dats);
+
+    consultarHoteles();
+
+    bootstrap.Modal.getInstance($("#modalEliminar")[0]).hide();
+}
+
+
+
+
+export async function crearDatos() {
+
+    const correo = document.getElementById("correoCrear").value;
+    const descripcion = document.getElementById("descripcionCrear").value;
+
+    const nombre = document.getElementById("nombreCrear").value;
+    const sitio_web = document.getElementById("sitio_webCrear").value;
+    const telefono = document.getElementById("telefonoCrear").value;
+    const usuario = "Profe Mario";
+
+    const hotel = {
+        "correo": correo,
+        "descripcion": descripcion,
+
+        "nombre": nombre,
+        "sitio_web": sitio_web,
+        "telefono": telefono,
+        "usuario": usuario
+    };
+
+    console.log(hotel);
+
+    const respuesta = await fetch(API.HOTEL,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(hotel)
+        }
+    );
+
+    if (!respuesta.ok) {
+        throw new Error("Error el servdidor de hotel." + respuesta.status);
+    }
+    const dats = await respuesta.json();
+
+    console.log("Json de la respuesta", dats);
+
+    consultarHoteles();
+
+    bootstrap.Modal.getInstance($("#modalCrear")[0]).hide();
+}
+
+
+
 export async function consultarHoteles() {
     //Fecth sirve para invocar o enviar datos por APIS
     const respuesta = await fetch(API.HOTEL);
@@ -81,6 +182,16 @@ window.mostrarEditar = function (identificador) {
     cargardatosFormularioEditar(identificador);
 }
 
+
+window.mostrarEliminar = function (identificador) {
+
+    const modalEliminar = new bootstrap.Modal($("#modalEliminar")[0]);
+    modalEliminar.show();
+
+    document.getElementById("ideliminar").value = identificador;
+    // alert(identificador);
+    //cargardatosFormularioEliminar(identificador);
+}
 
 
 export async function cargardatosFormularioEditar(identificador) {
@@ -148,6 +259,7 @@ function pintarTabla(datos) {
                             class="btn btn-danger"
                             href="#"
                             role="button"
+                             onclick="mostrarEliminar('${elementIndividuales.id}')"
                             >Eliminar</a> 
                    </td>                    
                 </tr>
