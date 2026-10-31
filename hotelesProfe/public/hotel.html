@@ -165,7 +165,114 @@
                 ></button>
               </div>
               <div class="modal-body">
-                <div class="container-fluid">Add rows here</div>
+                <div class="container-fluid">
+                  <form action="">
+                    <div class="mb-3">
+                      <label for="" class="form-label">nombre</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="nombre"
+                        id="nombre"
+                        aria-describedby="helpId"
+                        placeholder=""
+                        required
+                      />
+                      <small id="helpId" class="form-text text-body-secondary"
+                        >Help text nombre</small
+                      >
+                    </div>
+                    <div class="mb-3">
+                      <label for="" class="form-label">descripcion</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="descripcion"
+                        id="descripcion"
+                        aria-describedby="helpId"
+                        placeholder=""
+                        required
+                      />
+                      <small id="helpId" class="form-text text-body-secondary"
+                        >Help text descripcion</small
+                      >
+                    </div>
+                    <div class="mb-3">
+                      <label for="" class="form-label">telefono</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="telefono"
+                        id="telefono"
+                        aria-describedby="helpId"
+                        placeholder=""
+                        required
+                      />
+                      <small id="helpId" class="form-text text-body-secondary"
+                        >Help text telefono</small
+                      >
+                    </div>
+                    <div class="mb-3">
+                      <label for="" class="form-label">correo</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="correo"
+                        id="correo"
+                        aria-describedby="helpId"
+                        placeholder=""
+                        required
+                      />
+                      <small id="helpId" class="form-text text-body-secondary"
+                        >Help text correo</small
+                      >
+                    </div>
+                    <div class="mb-3">
+                      <label for="" class="form-label">Sitio Web</label>
+                      <input
+                        type="url"
+                        class="form-control"
+                        name="sitio_web"
+                        id="sitio_web"
+                        aria-describedby="helpId"
+                        placeholder=""
+                        required
+                      />
+                      <small id="helpId" class="form-text text-body-secondary"
+                        >Help text sitio_web</small
+                      >
+                    </div>
+                    <div class="mb-3">
+                      <label for="" class="form-label">usuario</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="usuario"
+                        id="usuario"
+                        aria-describedby="helpId"
+                        placeholder=""
+                        required
+                      />
+                      <small id="helpId" class="form-text text-body-secondary"
+                        >Help text usuario</small
+                      >
+                    </div>
+                    <div class="container">
+                      <div class="row">
+                        <div class="col">
+                          <button type="reset" class="btn btn-danger">
+                            Reset
+                          </button>
+                        </div>
+                        <div class="col">
+                          <button type="submit" class="btn btn-success">
+                            Enviar
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
               </div>
               <div class="modal-footer">
                 <button
@@ -175,24 +282,10 @@
                 >
                   Close
                 </button>
-                <button type="button" class="btn btn-primary">Save</button>
               </div>
             </div>
           </div>
         </div>
-
-        <!-- <script>
-          var modalId = document.getElementById("modalId");
-
-          modalId.addEventListener("show.bs.modal", function (event) {
-            // Button that triggered the modal
-            let button = event.relatedTarget;
-            // Extract info from data-bs-* attributes
-            let recipient = button.getAttribute("data-bs-whatever");
-
-            // Use above variables to manipulate the DOM
-          });
-        </script> -->
       </main>
       <footer>
         <!-- place footer here -->
