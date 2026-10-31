@@ -28,10 +28,38 @@ window.mostrarEditar = function (identificador) {
     cargardatosFormularioEditar(identificador);
 }
 
-function cargardatosFormularioEditar(identificador) {
+
+
+export async function cargardatosFormularioEditar(identificador) {
+
+
+    const urlGetByID = `${API.HOTEL}?id=${identificador}`;
+
+    //Fecth sirve para invocar o enviar datos por APIS
+    const respuesta = await fetch(urlGetByID);
+
+    if (!respuesta.ok) {
+        throw new Error("Error al consultar el servdidor de hotel.");
+    }
+
+    const dats = await respuesta.json();
+
+    console.log("Json de la respuesta", dats.data[0]);
+
+    cargarInputsEditar(dats.data[0]);
+}
+function cargarInputsEditar(datos) {
+    document.getElementById("correo").value = datos.correo;
+    document.getElementById("descripcion").value = datos.descripcion;
+    //  document.getElementById("estado").value = datos.estado;
+    //  document.getElementById("fecha_creacion").value = datos.fecha_creacion;
+    // document.getElementById("id").value = datos.id ;
+    document.getElementById("nombre").value = datos.nombre;
+    document.getElementById("sitio_web").value = datos.sitio_web;
+    document.getElementById("telefono").value = datos.telefono;
+    document.getElementById("usuario").value = datos.usuario;
 
 }
-
 
 function pintarTabla(datos) {
 
